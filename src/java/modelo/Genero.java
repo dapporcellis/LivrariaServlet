@@ -6,12 +6,14 @@
 package modelo;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -24,12 +26,23 @@ import javax.persistence.NamedQuery;
 })
 public class Genero implements Serializable {
 
+    @OneToMany(mappedBy = "genero")
+    private List<Livro> livros;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
     private String genero;
+
+    public List<Livro> getLivros() {
+        return livros;
+    }
+
+    public void setLivros(List<Livro> livros) {
+        this.livros = livros;
+    }
 
     public String getGenero() {
         return genero;

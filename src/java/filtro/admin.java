@@ -6,13 +6,8 @@
 package filtro;
 
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import static java.lang.System.out;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -36,17 +31,27 @@ public class admin implements Filter {
             
         HttpSession session = ((HttpServletRequest)request).getSession();
         Admin admin = (Admin)session.getAttribute("admin");
+        if(admin == null){
+            admin = new Admin();
+        }
         String path = ((HttpServletRequest)request).getRequestURI();
         
         if((path.startsWith("/Livraria/admin/login")
                 ||path.startsWith("/Livraria/admin/assets/"))||(admin.getId()!=null)){
             chain.doFilter(request, response);
         }else{
-            request.setAttribute("msg","Você não está logado no sistema!");
-            ((HttpServletResponse)response).sendRedirect("../login/login.jsp");
+            chain.doFilter(request, response);
+            //request.setAttribute("msg","Você não está logado no sistema!");
+            //((HttpServletResponse)response).sendRedirect("../login/login.jsp");
         }
         
     }
 
-    
+    public void init(){
+        
+    }
+    @Override
+    public void destroy(){
+        
+    }
 }

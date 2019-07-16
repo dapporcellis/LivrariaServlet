@@ -40,12 +40,12 @@
                             <td>${obj.email}</td>
                             <td><img src="../../arquivos/${obj.endFoto}" height="42" width="42"></td>
                             <td>
-                                <a class="btn btn-info btn-fab btn-icon btn-round" href="AutorWS?acao=edit&id=${obj.id}">
+                                <a class="btn btn-info btn-fab btn-icon btn-round" href="AdminWS?acao=edit&id=${obj.id}">
                                     <i class="tim-icons icon-pencil"></i>
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="AutorWS?acao=del&id=${obj.id}">
+                                <a class="btn btn-primary btn-fab btn-icon btn-round" href="AdminWS?acao=del&id=${obj.id}">
                                     <i class="tim-icons icon-trash-simple"></i>
                                 </a>
                             </td>

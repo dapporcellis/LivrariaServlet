@@ -42,6 +42,12 @@
             </a>
           </li>
           <li>
+            <a href="./../classificacao/ClassificacaoWS?acao=list">
+              <i class="tim-icons icon-tag"></i>
+              <p>Classificação</p>
+            </a>
+          </li>
+          <li>
             <a href="./../autor/AutorWS?acao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Autor</p>
@@ -51,6 +57,12 @@
             <a href="./../editora/EditoraWS?acao=list">
               <i class="tim-icons icon-tag"></i>
               <p>Editora</p>
+            </a>
+          </li>
+          <li>
+            <a href="./../livro/LivroWS?acao=list">
+              <i class="tim-icons icon-tag"></i>
+              <p>Livro</p>
             </a>
           </li>
           <li>
@@ -116,7 +128,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
-                    <a href="#" class="nav-item dropdown-item">Profile</a>
+                    <a href="#" class="nav-item dropdown-item">${sessionScope['admin'].nome}</a>
                   </li>
                   <li class="nav-link">
                     <a href="#" class="nav-item dropdown-item">Settings</a>

@@ -3,8 +3,11 @@
   <persistence-unit name="LivrariaPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>modelo.Editora</class>
+    <class>modelo.Autor</class>
+    <class>modelo.Genero</class>
     <class>modelo.Admin</class>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <class>modelo.Classificacao</class>
+    <class>modelo.Livro</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/Livraria"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

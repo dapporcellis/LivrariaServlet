@@ -2,7 +2,7 @@
 <%@include file="../cabecalho.jsp" %>
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Adiciona Genero</h5>
+                <h5 class="title">Adiciona Classificação</h5>
               </div>
               <div class="card-body">
                   <!--MODIFICAR PARA ADD-->
@@ -16,8 +16,8 @@
                     </div>
                     <div class="col-md-5 pr-md-1">
                       <div class="form-group">
-                        <label>Genero</label>
-                        <input type="text" class="form-control" name="txtGenero" placeholder="Genero" value="${obj.genero}">
+                        <label>Classificação</label>
+                        <input type="text" class="form-control" name="txtClassificacao" placeholder="Genero" value="${obj.genero}">
                       </div>
                     </div>
                   </div>

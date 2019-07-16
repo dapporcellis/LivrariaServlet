@@ -47,7 +47,7 @@
                   </div>
                 </p>
                 <p class="card-description">
-                <form action="LoginWS" method="POST">
+                <form action="../login/LoginWS" method="POST">
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">

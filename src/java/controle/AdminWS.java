@@ -44,14 +44,21 @@ public class AdminWS extends HttpServlet {
                 dao = new AdminDAO();
                 pagina = "index.jsp";
                 obj = dao.buscarPorChavePrimaria(Long.parseLong(id));
-                Boolean deucerto = dao.excluir(obj);
-                if(deucerto){   
+                Admin adm_sessao = (Admin)request.getSession().getAttribute("admin");
+                if(adm_sessao.getId()==Long.parseLong(id)){
                     lista = dao.listar();
                     request.setAttribute("lista", lista);
-                    request.setAttribute("msg", "Excluído com sucesso");
-                }
-                else{
-                    request.setAttribute("msg", "Erro ao excluir");
+                    request.setAttribute("msg", "Você não pode excluir o Admin que esta logado.");
+                }else{
+                    Boolean deucerto = dao.excluir(obj);
+                    if(deucerto){   
+                        lista = dao.listar();
+                        request.setAttribute("lista", lista);
+                        request.setAttribute("msg", "Excluído com sucesso");
+                    }
+                    else{
+                        request.setAttribute("msg", "Erro ao excluir");
+                    }
                 }
                 break;
             case "edit":
